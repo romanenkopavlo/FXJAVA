@@ -3,12 +3,19 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="246.0" prefWidth="463.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="fr.btsciel.demo.Controller">
+<VBox alignment="CENTER" prefHeight="211.0" prefWidth="639.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.btsciel.demo.Controller">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <TextField fx:id="textFieldEquation" prefHeight="72.0" prefWidth="423.0" />
+   <TextField fx:id="textFieldEquation" prefHeight="43.0" prefWidth="388.0" stylesheets="@appstyle/css.css">
+      <font>
+         <Font size="35.0" />
+      </font></TextField>
 
-    <Label fx:id="labelResultat" prefHeight="17.0" prefWidth="147.0" />
+    <Label fx:id="labelResultat" prefHeight="51.0" prefWidth="635.0">
+      <font>
+         <Font size="35.0" />
+      </font></Label>
 </VBox>

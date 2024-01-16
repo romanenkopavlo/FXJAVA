@@ -1,0 +1,7 @@
+.ok {
+    -fx-background-color: #00ff00;
+}
+
+.noOk {
+    -fx-background-color: #ff0000;
+}

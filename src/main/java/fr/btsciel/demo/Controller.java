@@ -7,19 +7,30 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
-
+public class Controller extends EqResoudre implements Initializable{
     public Label labelResultat;
     public TextField textFieldEquation;
+    public EqResoudre resoudre = new EqResoudre();
+
+    public Controller() {
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        miseAJour();
+        resoudre();
     }
 
-    private void miseAJour() {
+    private void resoudre() {
         textFieldEquation.textProperty().addListener(event->{
-            labelResultat.setText(textFieldEquation.getText().toUpperCase());
+            if (resoudre.typeEquationOk(textFieldEquation.getText())) {
+                textFieldEquation.getStyleClass().clear();
+                textFieldEquation.getStyleClass().addAll("text-field", "text-input","ok");
+                labelResultat.setText(resoudre.resoudre(textFieldEquation.getText()));
+            } else {
+                textFieldEquation.getStyleClass().clear();
+                textFieldEquation.getStyleClass().addAll("text-field", "text-input","noOk");
+                labelResultat.setText("Format non autorise");
+            }
         });
     }
 }
